@@ -1,0 +1,43 @@
+type Query {
+    products: [Product!]!
+    product(id: ID!): Product
+    searchProducts(keyword: String!): [Product!]!
+    productsByCategory(categoryId: ID!): [Product!]!
+    categories: [Category!]!
+    category(id: ID!): Category
+}
+
+type Mutation {
+    createProduct(input: ProductInput!): Product!
+    updateProduct(id: ID!, input: ProductInput!): Product!
+    deleteProduct(id: ID!): Boolean!
+    createCategory(input: CategoryInput!): Category!
+    updateCategory(id: ID!, input: CategoryInput!): Category!
+    deleteCategory(id: ID!): Boolean!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    description: String
+    price: Float!
+    stock: Int!
+    category: Category!
+}
+
+type Category {
+    id: ID!
+    name: String!
+}
+
+input ProductInput {
+    name: String!
+    description: String
+    price: Float!
+    stock: Int!
+    categoryId: ID!
+}
+
+input CategoryInput {
+    name: String!
+}
