@@ -34,4 +34,14 @@ public class GraphQLExceptionHandler {
                 .message(ex.getMessage())
                 .build();
     }
+
+    @GraphQlExceptionHandler
+    public GraphQLError handleError(IllegalArgumentException ex) {
+        return GraphQLError.newError()
+                .errorType(ErrorType.INTERNAL_ERROR)
+                .message(ex.getMessage())
+                .build();
+    }
+
+
 }
