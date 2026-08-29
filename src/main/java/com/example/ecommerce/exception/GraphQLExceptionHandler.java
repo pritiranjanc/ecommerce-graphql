@@ -28,7 +28,7 @@ public class GraphQLExceptionHandler {
     }
 
     @GraphQlExceptionHandler
-    public GraphQLError handleError(ResourceNotFoundException ex) {
+    public GraphQLError handle(ResourceNotFoundException ex) {
         return GraphQLError.newError()
                 .errorType(ErrorType.INTERNAL_ERROR)
                 .message(ex.getMessage())
@@ -36,7 +36,7 @@ public class GraphQLExceptionHandler {
     }
 
     @GraphQlExceptionHandler
-    public GraphQLError handleError(IllegalArgumentException ex) {
+    public GraphQLError handle(IllegalArgumentException ex) {
         return GraphQLError.newError()
                 .errorType(ErrorType.INTERNAL_ERROR)
                 .message(ex.getMessage())
