@@ -1,14 +1,10 @@
 package com.example.ecommerce.exception;
 
 import graphql.GraphQLError;
-import graphql.GraphqlErrorBuilder;
-import graphql.schema.DataFetchingEnvironment;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.graphql.data.method.annotation.GraphQlExceptionHandler;
-import org.springframework.graphql.execution.DataFetcherExceptionResolverAdapter;
 import org.springframework.graphql.execution.ErrorType;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import java.util.stream.Collectors;
